@@ -1,0 +1,15 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b chat_client 
+
+<!-- 
+Provide an overview of your package.
+-->
+
+This package reads simple requests in natural english concerning objects in a living room. These requests are translated into prolog-queries for the package 'livingroom_map'.
+This package and the 'livingroom_map' package are part of an assignment for the seminar 'KI-basierte Robotersteuerung' (SoSe2013) at the University of Bremen.
+
+
+*/

@@ -1,0 +1,16 @@
+<package>
+  <description brief="chat_client">
+
+     Parse english questions concerning objects in a living room into prolog queries for the 'livingroom_map' package.
+
+  </description>
+  <author>Maximilian Hertzer, Moritz Horstmann, Tom Vincent Peters, Hannes Welling</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://ai.uni-bremen.de/wiki/teaching/se-kiba/knowledge-assignment</url>
+  <depend package="std_msgs"/>
+  <depend package="rosjava_jni"/>
+
+</package>
+
+

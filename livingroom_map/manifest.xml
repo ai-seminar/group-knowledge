@@ -1,0 +1,16 @@
+<package>
+  <description brief="livingroom_map">
+
+     livingroom_map
+
+  </description>
+  <depend package="mod_vis"/>
+  <depend package="ias_semantic_map"/>
+  <author>viki</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/livingroom_map</url>
+
+</package>
+
+

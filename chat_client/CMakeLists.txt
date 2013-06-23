@@ -26,6 +26,13 @@ include(UseJava)
 
 # TODO why do we even need to specify these libs? they are needed by json_prolog and are already specified there.
 
+# Prolog stuff
+rosbuild_find_ros_package(jpl)
+add_jni_path(${jpl_PACKAGE_PATH}/prolog)
+add_ld_preload(/usr/lib/libswipl.so)
+add_ld_preload(/usr/lib/libpl.so)
+add_classpath(${jpl_PACKAGE_PATH}/prolog/jpl.jar)
+
 # Java: JSON lib
 find_jar(JSON_LIB_JAR NAMES json-lib)
 add_classpath(${JSON_LIB_JAR})

@@ -1,15 +1,16 @@
 <package>
   <description brief="livingroom_map">
 
-     livingroom_map
+     Knowrob package of a typical living room. It contains a semantic map of a living room, as well as an ontology of objects in the living room.
 
   </description>
-  <depend package="mod_vis"/>
-  <depend package="ias_semantic_map"/>
-  <author>viki</author>
+  <author>Maximilian Hertzer, Moritz Horstmann, Tom Vincent Peters, Hannes Welling</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/livingroom_map</url>
+  <url>https://ai.uni-bremen.de/wiki/teaching/se-kiba/knowledge-assignment</url>
+  <depend package="mod_vis"/>
+  <depend package="ias_knowledge_base"/>
+  <depend package="ias_semantic_map"/>
 
 </package>
 

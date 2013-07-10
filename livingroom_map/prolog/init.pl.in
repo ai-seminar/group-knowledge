@@ -1,0 +1,15 @@
+% Prolog file for livingroom map initialization and reasoning module import
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% dependencies
+
+:- register_ros_package(ias_knowledge_base).
+:- register_ros_package(livingroom_map).
+
+%:- use_module(library('livingroom_map')).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% parse OWL files, register name spaces
+
+:- owl_parser:owl_parse('@LOCAL_PACKAGE_PATH@/owl/living_room_map.owl', false, false, true).
+:- rdf_db:rdf_register_ns(livingroom_map, 'http://rostest.local/livingroom_map.owl#',     [keep(true)]).

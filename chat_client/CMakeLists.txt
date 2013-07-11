@@ -64,7 +64,7 @@ add_classpath(${COMMONS_LANG_JAR})
 add_runtime_classpath(${COMMONS_LANG_JAR})
 
 add_java_source_dir( ${PROJECT_SOURCE_DIR}/src/java )
-rospack_add_java_executable( test_client org.knowrob.tutorials.chat.JSONPrologTestClient )
+rospack_add_java_executable( chat_client org.knowrob.tutorials.chat.ChatClient )
 
 #common commands for building c++ executables and libraries
 #rosbuild_add_library(${PROJECT_NAME} src/example.cpp)

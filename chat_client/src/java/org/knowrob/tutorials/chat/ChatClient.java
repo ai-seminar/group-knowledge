@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.ArrayList;
 
 import edu.tum.cs.ias.knowrob.json_prolog.Prolog;
 import edu.tum.cs.ias.knowrob.json_prolog.PrologBindings;
@@ -20,9 +21,15 @@ import edu.tum.cs.ias.knowrob.json_prolog.PrologValue;
  */
 public class ChatClient {
 
-	private static final Pattern SIMPLESENTENCE = Pattern.compile("Where (?:is|are) (?:a|the) (.+?)\\?", Pattern.CASE_INSENSITIVE);
-
 	private static final Prolog PL = new Prolog();
+
+	private static ArrayList<Pattern> getPatterns() {
+		ArrayList<Pattern> patterns = new ArrayList<Pattern>();
+		patterns.add(Pattern.compile("Where (?:is|are) (?:a|the) (.+?)\\?", Pattern.CASE_INSENSITIVE));
+		patterns.add(Pattern.compile("Where (?:is|are) (?:a|the) (.+?)(:? located|located at|found|)\\?", Pattern.CASE_INSENSITIVE));
+		patterns.add(Pattern.compile("Where did .* (?:put|place|hang up|lay down|store|throw|deposit|file|archive) [^ ]+ (.+?)\\?", Pattern.CASE_INSENSITIVE));
+		return patterns;
+	}
 
 	/**
 	 * @param args
@@ -46,9 +53,16 @@ public class ChatClient {
 		String read;
 		do {
 			read = reader.readLine();
-			Matcher m = SIMPLESENTENCE.matcher(read);
-			if (m.find() && !m.group(1).trim().isEmpty()) {
-				System.out.println("Looking for " + m.group(1).trim());
+			boolean foundPattern = false;
+			for (Pattern pattern : getPatterns()) {
+				Matcher m = pattern.matcher(read);
+				if (m.find() && !m.group(1).trim().isEmpty()) {
+					System.out.println("Looking for " + m.group(1).trim());
+					foundPattern = true;
+				}
+			}
+			if (!foundPattern) {
+				System.out.println("I'm sorry, I didn't understand your question.");
 			}
 		} while (!read.isEmpty());
 	}

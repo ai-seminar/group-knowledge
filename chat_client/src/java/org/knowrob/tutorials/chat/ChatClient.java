@@ -29,6 +29,9 @@ public class ChatClient {
 	 * @throws IOException
 	 */
 	public static void main(String... args) throws IOException {
+
+		System.out.println("Chat client for livingroom_map");
+
 		// Simple example of JSON prolog query service usage from JSONPrologTestClient
 		PrologQueryProxy bdgs = PL.query("member(A, [1, 2, 3, 4]), B = ['x', A], C = foo(bar, A, B)");
 		for (PrologBindings bdg : bdgs) {
@@ -37,7 +40,7 @@ public class ChatClient {
 				System.out.println(bd.getKey() + " = " + bd.getValue());
 			}
 		}
-
+		System.out.println("Ask me something (eg. Where is the table?)");
 		// Start listening for input.
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String read;
